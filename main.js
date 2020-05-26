@@ -81,3 +81,9 @@ loadMore.addEventListener('click', () => {
     isLoading = false
   }, 2000)
 })
+
+myChart.on('click', (e) => {
+  console.log('index', e.dataIndex)
+  console.log('x', e.name)
+  console.log('y', e.data)
+})

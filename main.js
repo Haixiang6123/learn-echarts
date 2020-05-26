@@ -1,3 +1,5 @@
+// doc: https://echarts.apache.org/zh/cheat-sheet.html
+
 import echarts from 'echarts'
 
 const $chart = document.getElementById('main')
@@ -45,4 +47,25 @@ const barCharOption = {
 };
 
 // 使用刚指定的配置项和数据显示图表。
-myChart.setOption(lineChartOption);
+myChart.setOption({
+  title: {
+    text: '折线图'
+  },
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [{
+    lineStyle: {
+       color: 'blue'
+    },
+    itemStyle: {
+      borderWidth: 10
+    },
+    data: [820, 932, 901, 934, 1290, 1330, 1320],
+    type: 'line'
+  }]
+});

@@ -4,6 +4,11 @@ import echarts from 'echarts'
 
 const $chart = document.getElementById('main')
 
+// 调整宽度
+const width = document.documentElement.clientWidth
+main.style.width = width + 'px'
+main.style.height = width * 1.2 + 'px'
+
 // 基于准备好的dom，初始化echarts实例
 // 主题：dark, light, default
 const myChart = echarts.init($chart, 'light')
@@ -30,22 +35,41 @@ const lineChartOption = {
 let xData = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
 let yData = [5, 20, 36, 10, 10, 20]
 const barCharOption = {
-  title: {
-    text: 'ECharts 入门示例'
+  baseOption: {
+    title: {
+      text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+      data: ['销量']
+    },
+    xAxis: {
+      data: xData
+    },
+    yAxis: {},
+    series: [{
+      name: '销量',
+      type: 'bar',
+      data: yData
+    }]
   },
-  tooltip: {},
-  legend: {
-    data: ['销量']
-  },
-  xAxis: {
-    data: xData
-  },
-  yAxis: {},
-  series: [{
-    name: '销量',
-    type: 'bar',
-    data: yData
-  }]
+  media: [
+    {
+      query: {
+        maxWidth: 500,
+      },
+      option: {
+        series: [{
+          name: '销量',
+          type: 'bar',
+          itemStyle: {
+            color: 'red'
+          },
+          data: yData
+        }]
+      }
+    }
+  ]
 }
 
 // 使用刚指定的配置项和数据显示图表。

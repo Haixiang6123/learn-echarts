@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "echarts": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/echarts": "^4.6.0"
+  }
+}

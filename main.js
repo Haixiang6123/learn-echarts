@@ -53,20 +53,31 @@ myChart.setOption(barCharOption)
 
 let i = 0
 
+let isLoading = false
+
 loadMore.addEventListener('click', () => {
-  const key = i
+  if (isLoading) return
   i += 1
+  const key = i
   const value = i + 100
 
-  xData = [...xData, key]
-  yData = [...yData, value]
+  isLoading = true
+  myChart.showLoading()
 
-  myChart.setOption({
-    xAxis: {
-      data: xData
-    },
-    series: [{
-      data: yData
-    }]
-  })
+  setTimeout(() => {
+    xData = [...xData, key]
+    yData = [...yData, value]
+
+    myChart.setOption({
+      xAxis: {
+        data: xData
+      },
+      series: [{
+        data: yData
+      }]
+    })
+
+    myChart.hideLoading()
+    isLoading = false
+  }, 2000)
 })

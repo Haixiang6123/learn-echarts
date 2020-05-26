@@ -4,12 +4,16 @@
   },
   "dependencies": {
     "echarts": "^4.8.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "vue": "*",
     "vue-hot-reload-api": "^2.3.4",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
     "@types/echarts": "^4.6.0",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "@types/vue": "^2.0.0",
     "@vue/component-compiler-utils": "^3.1.2",
     "typescript": "^3.9.3",
